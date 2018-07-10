@@ -22,3 +22,21 @@ var sofa = new item("sofa", "junrqpedu83", "It's a sofa.", "https://wallpaperbro
 items.push(chair)
 items.push(table)
 items.push(sofa)
+
+for (i = 0; i < items.length; i++) {
+  for (attr in items[i]) {
+    if(attr == "img") {
+      var img = document.createElement('img')
+      img.src = items[i][attr]
+      document.body.appendChild(img)
+    } else if (attr = "product"){
+      var prod = document.createElement('h3')
+      prod.textContext = items[i].product()
+      document.body.appendChild(prod)
+    } else {
+      var h4 = document.createElement("h4")
+      h4.textContent = items[i][attr]
+      document.body.appendChild(h4)
+    }
+  }
+}
